@@ -1,0 +1,19 @@
+{
+  "name": "MVP Docs & Learn Champion extension",
+  "description": "Adds 'Copy link address with CreatorID' to context menu on eligible sites.",
+  "version": "4",
+  "background": {
+    "scripts": [
+      "main.js"
+    ]
+  },
+  "manifest_version": 2,
+  "permissions": [
+    "contextMenus"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
