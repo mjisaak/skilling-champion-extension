@@ -1,5 +1,4 @@
 // Dear MVP fellow, please enter your Creator ID here:
-const CREATOR_ID = "AZ-MVP-5003203";
 const QUERY_KEY = 'WT.mc_id'
 
 chrome.runtime.onInstalled.addListener(function () {
@@ -30,10 +29,22 @@ chrome.runtime.onInstalled.addListener(function () {
     });
 });
 
+
+
+
 chrome.contextMenus.onClicked.addListener(function (itemData) {
-    var url = new URL(itemData.linkUrl)
-    url.searchParams.append(QUERY_KEY, CREATOR_ID)
-    copyTextToClipboard(url.href)
+
+
+    chrome.storage.sync.get({
+        creatorId: '',
+    }, function (items) {
+        creatorId = items.creatorId;
+
+        var url = new URL(itemData.linkUrl)
+        url.searchParams.append(QUERY_KEY, creatorId)
+        copyTextToClipboard(url.href)
+    });
+
 });
 
 function copyTextToClipboard(text) {
