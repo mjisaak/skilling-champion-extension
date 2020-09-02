@@ -5,7 +5,8 @@
   "background": {
     "scripts": [
       "main.js"
-    ]
+    ],
+    "persistent": false
   },
   "manifest_version": 2,
   "options_ui": {
