@@ -1,7 +1,7 @@
 {
   "name": "MVP Docs & Learn Champion extension",
   "description": "Copy link address with CreatorID",
-  "version": "0.0.0.2",
+  "version": "0.0.0.4",
   "background": {
     "scripts": [
       "main.js"
