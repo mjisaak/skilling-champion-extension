@@ -5,6 +5,6 @@
 This extension adds a 'Copy link address with CreatorID' item to your Chrome on suitable sites.
 It also ensures that the CreatorID is correctly added to the URL, so you don't have to worry about whether the URL already contains a query.
 
-Don't forget to set the CreatorID in the extension options ([open the options](chrome://extensions/?options=eichjbmnicihhbhodbejfkceoknaclfd))
+Don't forget to set the CreatorID in the extension options (shortlink: chrome://extensions/?options=eichjbmnicihhbhodbejfkceoknaclfd)
 
 ![Image of the context menue](./assets/context_menue.png)
