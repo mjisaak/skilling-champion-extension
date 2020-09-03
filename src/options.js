@@ -1,4 +1,3 @@
-
 function save_options() {
     var creatorId = document.getElementById('creatorId').value.replace('?WT.mc_id=', '');
     document.getElementById('creatorId').value = creatorId;
