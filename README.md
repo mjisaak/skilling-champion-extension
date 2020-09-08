@@ -3,11 +3,14 @@
 
 # MVP Docs & Learn Champion extension
 
-This extension adds a 'Copy link address with CreatorID' item to your Browser on suitable sites.
+This extension adds a ***Copy link address with CreatorID*** item to your Browser on suitable sites.
 It also ensures that the CreatorID is correctly added to the URL, so you don't have to worry about whether the URL already contains a query.
 
-![Image of the context menue](./assets/context_menue.png)
+![Image of the context menue](./assets/browser_copy_link_example.png)
 
-Don't forget to set the CreatorID in the extension options:
 
-![CreatorOptions](./assets/screenshot_chrome_options.png)
+## Options
+
+After you have installed the extension, please specify your CreateorID within the extension options:
+
+![Extension Options](./assets/screenshot_options.png)
