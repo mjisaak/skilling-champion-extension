@@ -5,34 +5,96 @@
     <title>MVP Docs & Learn Champion extension Options</title>
 </head>
 <style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+        /* background-color: #f9fafb; */
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    #container {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        width: 400px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 10px auto;
+        padding: 16px;
+    }
+
+    label,
+    select {
+        font-size: 1.1em;
+        display: block;
+        margin: 10px 0;
+    }
+
+    select {
+        width: 100%;
+        font-size: 1em;
+        padding: 5px;
+    }
+
     button {
-        margin-top: 10px;
-        margin-top: 10px;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 3%;
+        background: #0072BC;
+        border: none;
+        color: #fff;
+        font-size: 14px;
     }
 
-    input {
-        width: 60%
+    button:hover {
+        background: #4472C4;
+        cursor: pointer;
     }
 
-    #status {
-        color: green;
+
+    form input[type="text"] {
+        outline: none;
+        box-sizing: border-box;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 2%;
+        border: 1px solid #ccc;
+        padding: 3%;
+        color: #555;
+        font-size: 1em;
     }
 
-    label {
-        font-size: 1.2em;
-        margin-right: 10px;
+    form input[type="text"]:focus {
+        box-shadow: 0 0 5px #0072BC;
+        padding: 3%;
+        border: 1px solid #0072BC;
     }
 </style>
 
 <body>
-    <label>
-        CreatorID:
-    </label>
+    <div id="container">
+        <form>
+            <!-- <label for="name">CreatorId:</label> -->
+            <input type="text" id="name" placeholder="Enter a CreatorID" autocomplete="off">
 
-    <input type="text" id="creatorId" name="creatorId" placeholder="AZ-MVP-1234567">
+            <button id="btnAdd">Add</button>
 
-    <div id="status"></div>
-    <button id="save">Save</button>
+
+
+            <label for="list">Your CreatorIDs:</label>
+            <select id="list" name="list" multiple>
+
+            </select>
+            <button id="btnRemove">Remove Selected CreatorID</button>
+
+        </form>
+    </div>
 
     <script src="options.js"></script>
 </body>
