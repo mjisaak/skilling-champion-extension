@@ -1,7 +1,5 @@
 const QUERY_KEY = 'WT.mc_id';
 
-
-
 chrome.contextMenus.onClicked.addListener(function (itemData) {
 
     console.log("item", itemData);

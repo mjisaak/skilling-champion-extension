@@ -41,7 +41,6 @@ function createContextMenues(creatorIds) {
     chrome.contextMenus.removeAll();
 
     let parentId = (creatorIds.length > 1) ? "docslearnchampion" : creatorIds[0];
-    console.log("parent", parentId)
 
     chrome.contextMenus.create({
         title: 'Copy link address with CreatorID',
@@ -67,7 +66,6 @@ function createContextMenues(creatorIds) {
         ],
         contexts: ['link']
     });
-
 
     if (creatorIds.length > 1) {
         creatorIds.forEach(function (creatorId) {
