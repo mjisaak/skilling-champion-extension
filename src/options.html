@@ -75,17 +75,19 @@
         padding: 3%;
         border: 1px solid #0072BC;
     }
+
+    #error {
+        padding: 5px;
+        color: red;
+    }
 </style>
 
 <body>
     <div id="container">
         <form>
-            <!-- <label for="name">CreatorId:</label> -->
             <input type="text" id="name" placeholder="Enter a CreatorID" autocomplete="off">
-
+            <div id="error"></div>
             <button id="btnAdd">Add</button>
-
-
 
             <label for="list">Your CreatorIDs:</label>
             <select id="list" name="list" multiple>

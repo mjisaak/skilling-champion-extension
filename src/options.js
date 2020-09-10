@@ -2,26 +2,97 @@ const btnAdd = document.querySelector('#btnAdd');
 const btnRemove = document.querySelector('#btnRemove');
 const sb = document.querySelector('#list');
 const name = document.querySelector('#name');
+const error = document.querySelector('#error');
 
 btnAdd.onclick = (e) => {
     e.preventDefault();
 
-    // Ensure the CreatorID doesn't contain whitespaces and remove the query key if present
-    let creatorId = name.value.replace('?WT.mc_id=', '').trim()
+    let creatorId = trimCreatorId(name.value);
+    let values = Object.keys(sb.options).map(f => sb.options[f].value);
 
+    // ensure there are no duplicates
+    if (values.includes(creatorId)) {
+        error.textContent = 'CreatorId already exists';
 
+        setTimeout(function () {
+            error.textContent = '';
+        }, 2000);
+
+        name.focus();
+        return;
+    }
 
     const option = new Option(creatorId, creatorId);
     sb.add(option, undefined);
 
-    chrome.storage.sync.set({
-        list: Object.keys(sb.options).map(f => sb.options[f].value)
-    }, function () { });
+    saveCreatorIds();
+
 
     // reset the value of the input
     name.value = '';
     name.focus();
 };
+
+function trimCreatorId(creatorId) {
+    return creatorId.replace('?WT.mc_id=', '').trim();
+}
+
+function createContextMenues(creatorIds) {
+    chrome.contextMenus.removeAll();
+
+    let parentId = (creatorIds.length > 1) ? "docslearnchampion" : creatorIds[0];
+    console.log("parent", parentId)
+
+    chrome.contextMenus.create({
+        title: 'Copy link address with CreatorID',
+        id: parentId,
+        documentUrlPatterns: [
+            "http://social.technet.microsoft.com/*",
+            "https://docs.microsoft.com/*",
+            "https://azure.microsoft.com/*",
+            "https://techcommunity.microsoft.com/*",
+            "https://social.msdn.microsoft.com/*",
+            "https://devblogs.microsoft.com/*",
+            "https://developer.microsoft.com/*",
+            "https://channel9.msdn.com/*",
+            "https://gallery.technet.microsoft.com/*",
+            "https://cloudblogs.microsoft.com/*",
+            "https://technet.microsoft.com/*",
+            "https://docs.azure.cn/*",
+            "https://www.azure.cn/*",
+            "https://msdn.microsoft.com/*",
+            "https://blogs.msdn.microsoft.com/*",
+            "https://blogs.technet.microsoft.com/*",
+            "https://microsoft.com/handsonlabs/*"
+        ],
+        contexts: ['link']
+    });
+
+
+    if (creatorIds.length > 1) {
+        creatorIds.forEach(function (creatorId) {
+            console.log("creator", creatorId)
+            chrome.contextMenus.create({
+                title: creatorId,
+                id: creatorId,
+                parentId: parentId,
+                contexts: ['link']
+            });
+        });
+    }
+}
+
+function saveCreatorIds() {
+
+    let creatorIds = Object.keys(sb.options).map(f => sb.options[f].value);
+
+    chrome.storage.sync.set({
+        list: creatorIds
+    }, function () { });
+
+    createContextMenues(creatorIds);
+
+}
 
 btnRemove.onclick = (e) => {
     e.preventDefault();
@@ -40,43 +111,21 @@ btnRemove.onclick = (e) => {
             sb.remove(index);
         }
     }
+
+    saveCreatorIds();
 };
 
-function save_options() {
-    var creatorId = document.getElementById('creatorId').value.replace('?WT.mc_id=', '');
-    document.getElementById('creatorId').value = creatorId;
 
-
-}
-
-function restore_options() {
-
+function restoreOptions() {
     chrome.storage.sync.get({
         list: [],
     }, function (items) {
 
-
-
-
-        console.log("items:", items)
         items.list.forEach(function (item) {
             const option = new Option(item, item);
             sb.add(option, undefined);
-
-            console.log("item:", item)
-
-
-        })
-
-
-
+        });
     });
-
-
-
 }
 
-console.log("resoptiontore")
-document.addEventListener('DOMContentLoaded', restore_options);
-// document.getElementById('save').addEventListener('click',
-//     save_options);
+document.addEventListener('DOMContentLoaded', restoreOptions);
