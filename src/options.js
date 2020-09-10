@@ -39,6 +39,9 @@ function trimCreatorId(creatorId) {
 
 function createContextMenues(creatorIds) {
     chrome.contextMenus.removeAll();
+    if (creatorIds.length < 1) {
+        return
+    }
 
     let parentId = (creatorIds.length > 1) ? "docslearnchampion" : creatorIds[0];
 

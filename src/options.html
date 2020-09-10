@@ -40,6 +40,8 @@
         width: 100%;
         font-size: 1em;
         padding: 5px;
+        overflow: auto;
+        border: 1px solid #ccc;
     }
 
     button {
@@ -79,6 +81,12 @@
     #error {
         padding: 5px;
         color: red;
+    }
+
+    select:focus,
+    button:focus,
+    button:hover {
+        outline: none;
     }
 </style>
 
