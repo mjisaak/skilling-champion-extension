@@ -1,13 +1,13 @@
 const btnAdd = document.querySelector('#btnAdd');
 const btnRemove = document.querySelector('#btnRemove');
 const sb = document.querySelector('#list');
-const name = document.querySelector('#name');
+const namefield = document.querySelector('#name');
 const error = document.querySelector('#error');
 
 btnAdd.onclick = (e) => {
     e.preventDefault();
 
-    let creatorId = trimCreatorId(name.value);
+    let creatorId = trimCreatorId(namefield.value);
     let values = Object.keys(sb.options).map(f => sb.options[f].value);
 
     // ensure there are no duplicates
@@ -18,7 +18,7 @@ btnAdd.onclick = (e) => {
             error.textContent = '';
         }, 2000);
 
-        name.focus();
+        namefield.focus();
         return;
     }
 
@@ -29,8 +29,8 @@ btnAdd.onclick = (e) => {
 
 
     // reset the value of the input
-    name.value = '';
-    name.focus();
+    namefield.value = '';
+    namefield.focus();
 };
 
 function trimCreatorId(creatorId) {
