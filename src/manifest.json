@@ -13,6 +13,7 @@
     "page": "options.html",
     "open_in_tab": false
   },
+  // "options_page": "options.html", // for debug
   "permissions": [
     "contextMenus",
     "storage"
