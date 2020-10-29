@@ -2,8 +2,8 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    popup: path.join(__dirname, "../main.ts"),
-    // eventPage: path.join(__dirname, "src/eventPage.ts")
+    main: path.join(__dirname, "../main.ts"),
+    options: path.join(__dirname, "../options.ts"),
   },
   output: {
     path: path.join(__dirname, "./../../dist/js"),

@@ -1,7 +1,7 @@
-const btnAdd = document.querySelector('#btnAdd');
-const btnRemove = document.querySelector('#btnRemove');
-const sb = document.querySelector('#list');
-const namefield = document.querySelector('#name');
+const btnAdd = document.querySelector('#btnAdd') as HTMLElement;
+const btnRemove = document.querySelector('#btnRemove') as HTMLElement;
+const sb = document.querySelector('#list') as HTMLSelectElement;
+const namefield = document.querySelector('#name') as HTMLInputElement;
 const error = document.querySelector('#error');
 
 btnAdd.onclick = (e) => {

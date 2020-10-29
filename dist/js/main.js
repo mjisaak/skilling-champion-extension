@@ -1,0 +1,1 @@
+chrome.contextMenus.onClicked.addListener((function(e){var n,t,d=new URL(e.linkUrl);d.searchParams.append("WT.mc_id",e.menuItemId),n=d.href,(t=document.createElement("textarea")).textContent=n,document.body.appendChild(t),t.select(),document.execCommand("copy"),t.blur(),document.body.removeChild(t)}));
