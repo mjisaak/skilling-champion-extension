@@ -1,8 +1,8 @@
 const QUERY_KEY = 'WT.mc_id';
 
 chrome.contextMenus.onClicked.addListener(function (itemData) {
-    var url = new URL(itemData.linkUrl);
-    url.searchParams.append(QUERY_KEY, itemData.menuItemId);
+    var url = new URL(itemData.menuItemId.startsWith("page") ? itemData.pageUrl : itemData.linkUrl);
+    url.searchParams.append(QUERY_KEY, itemData.menuItemId.substring(4));
     copyTextToClipboard(url.href);
 });
 
