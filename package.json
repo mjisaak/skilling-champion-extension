@@ -1,0 +1,21 @@
+{
+  "name": "mvp-docs-learn-champion-extension",
+  "version": "1.1.0",
+  "description": "MVP Docs & Learn Champion extension",
+  "scripts": {
+    "build": "webpack --config src/webpack/webpack.prod.js",
+    "dev": "webpack --config webpack.dev.js",
+    "watch": "webpack -w --config webpack.dev.js"
+  },
+  "author": "Martin Brandl",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.60",
+    "ts-loader": "^4.0.1",
+    "typescript": "^3.8.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {}
+}
