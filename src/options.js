@@ -48,8 +48,8 @@ function createContextMenues(creatorIds) {
     chrome.contextMenus.create({
         title: 'Copy link address with CreatorID',
         id: parentId,
-        documentUrlPatterns: [
-            "http://social.technet.microsoft.com/*",
+        targetUrlPatterns: [
+            "https://social.technet.microsoft.com/*",
             "https://docs.microsoft.com/*",
             "https://azure.microsoft.com/*",
             "https://techcommunity.microsoft.com/*",

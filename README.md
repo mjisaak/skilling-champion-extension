@@ -11,6 +11,6 @@ It also ensures that the CreatorID is correctly added to the URL, so you don't h
 
 ## Options
 
-After you have installed the extension, please specify your CreateorIDs within the extension options:
+After you have installed the extension, please specify your CreatorIDs within the extension options:
 
 ![Extension Options](./assets/screenshot_options.png)
