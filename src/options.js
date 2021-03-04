@@ -122,10 +122,12 @@ function restoreOptions() {
         list: [],
     }, function (items) {
 
-        items.list.forEach(function (item) {
-            const option = new Option(item, item);
-            sb.add(option, undefined);
-        });
+        if (items) {
+            items.list.forEach(function (item) {
+                const option = new Option(item, item);
+                sb.add(option, undefined);
+            });
+        }
     });
 }
 
