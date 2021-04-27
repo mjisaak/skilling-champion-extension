@@ -1,6 +1,8 @@
 const btnAdd = document.querySelector('#btnAdd');
 const btnRemove = document.querySelector('#btnRemove');
 const sb = document.querySelector('#list');
+/** @type {HTMLInputElement} */
+const chkIncludeText = document.querySelector('#chkIncludeText');
 const namefield = document.querySelector('#name');
 const error = document.querySelector('#error');
 const chkLanguageneutral = document.querySelector('#chkLanguageneutral');
@@ -10,6 +12,11 @@ btnAdd.onclick = (e) => {
     e.preventDefault();
 
     let creatorId = trimCreatorId(namefield.value);
+
+    if (!creatorId || creatorId === '') {
+        return
+    }
+
     let values = Object.keys(sb.options).map(f => sb.options[f].value);
 
     // ensure there are no duplicates
@@ -120,6 +127,7 @@ function restoreOptions() {
     restoreLangOptions();
 	chrome.storage.sync.get({
         list: [],
+        includeText: false
     }, function (items) {
 
         if (items) {
@@ -127,8 +135,16 @@ function restoreOptions() {
                 const option = new Option(item, item);
                 sb.add(option, undefined);
             });
+
+            chkIncludeText.checked = items.includeText;
         }
     });
+}
+
+chkIncludeText.onchange = (e) => {
+    e.preventDefault();
+
+    chrome.storage.sync.set({includeText: chkIncludeText.checked}, () => { });
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);

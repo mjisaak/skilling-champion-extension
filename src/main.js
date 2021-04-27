@@ -5,11 +5,37 @@ var makeNeutralURL = false; // toggle for removal of language code from English 
 var makeNeutralURLAll = false; // toggle for removal of language code from language specific URLs in any language 
 
 chrome.contextMenus.onClicked.addListener(function (itemData) {
-    var url = new URL(itemData.linkUrl);
-    url.searchParams.append(QUERY_KEY, itemData.menuItemId);
-	if (makeNeutralURL) {url.href = url.href.replace(regex, "")} //remove language code from URL
-	if (makeNeutralURLAll) {url.href = url.href.replace(regexAll, "")} //remove language code from URL
-    copyTextToClipboard(url.href);
+   
+    chrome.storage.sync.get(['includeText'], function (data) {
+
+        if (data) {
+            const url = new URL(itemData.linkUrl);
+
+            url.searchParams.append(QUERY_KEY, itemData.menuItemId);
+
+          	if (makeNeutralURL) {url.href = url.href.replace(regex, "")} //remove language code from URL
+          	if (makeNeutralURLAll) {url.href = url.href.replace(regexAll, "")} //remove language code from URL
+
+            let text;
+            if (data.includeText) {
+                let prefix;
+
+                if (itemData.linkText) {
+                    // This property only currently exists for Firefox
+                    prefix = itemData.linkText + "\n";
+                } else if (itemData.selectionText) {
+                    prefix = itemData.selectionText + "\n";
+                } else {
+                    prefix = "";
+                }
+                text = prefix + url.href;
+            } else {
+                text = url.href;
+            }
+
+            copyTextToClipboard(text);
+        }        
+    });
 });
 
 function copyTextToClipboard(text) {
