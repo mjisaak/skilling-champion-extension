@@ -37,52 +37,7 @@ function trimCreatorId(creatorId) {
     return creatorId.replace('?WT.mc_id=', '').trim();
 }
 
-function createContextMenues(creatorIds) {
-    chrome.contextMenus.removeAll();
-    if (creatorIds.length < 1) {
-        return
-    }
 
-    let parentId = (creatorIds.length > 1) ? "docslearnchampion" : creatorIds[0];
-
-    chrome.contextMenus.create({
-        title: 'Copy link address with CreatorID',
-        id: parentId,
-        targetUrlPatterns: [
-            "https://social.technet.microsoft.com/*",
-            "https://docs.microsoft.com/*",
-            "https://azure.microsoft.com/*",
-            "https://techcommunity.microsoft.com/*",
-            "https://social.msdn.microsoft.com/*",
-            "https://devblogs.microsoft.com/*",
-            "https://developer.microsoft.com/*",
-            "https://channel9.msdn.com/*",
-            "https://gallery.technet.microsoft.com/*",
-            "https://cloudblogs.microsoft.com/*",
-            "https://technet.microsoft.com/*",
-            "https://docs.azure.cn/*",
-            "https://www.azure.cn/*",
-            "https://msdn.microsoft.com/*",
-            "https://blogs.msdn.microsoft.com/*",
-            "https://blogs.technet.microsoft.com/*",
-            "https://microsoft.com/handsonlabs/*",
-            "https://csc.docs.microsoft.com/*"
-        ],
-        contexts: ['link']
-    });
-
-    if (creatorIds.length > 1) {
-        creatorIds.forEach(function (creatorId) {
-            console.log("creator", creatorId)
-            chrome.contextMenus.create({
-                title: creatorId,
-                id: creatorId,
-                parentId: parentId,
-                contexts: ['link']
-            });
-        });
-    }
-}
 
 function saveCreatorIds() {
 
@@ -92,8 +47,7 @@ function saveCreatorIds() {
         list: creatorIds
     }, function () { });
 
-    createContextMenues(creatorIds);
-
+    chrome.runtime.sendMessage('updateDocsLearnContextMenues');
 }
 
 btnRemove.onclick = (e) => {
