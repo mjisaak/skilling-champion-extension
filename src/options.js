@@ -65,7 +65,8 @@ function createContextMenues(creatorIds) {
             "https://msdn.microsoft.com/*",
             "https://blogs.msdn.microsoft.com/*",
             "https://blogs.technet.microsoft.com/*",
-            "https://microsoft.com/handsonlabs/*"
+            "https://microsoft.com/handsonlabs/*",
+            "https://csc.docs.microsoft.com/*"
         ],
         contexts: ['link']
     });
