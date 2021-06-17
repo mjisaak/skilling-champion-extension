@@ -1,8 +1,11 @@
 const QUERY_KEY = 'WT.mc_id';
+const regex = /\/en-us/i; //look for URLs that force English language
+var makeNeutralURL = false; // toggle for removal of language code from URLs 
 
 chrome.contextMenus.onClicked.addListener(function (itemData) {
     var url = new URL(itemData.linkUrl);
     url.searchParams.append(QUERY_KEY, itemData.menuItemId);
+	if (makeNeutralURL) {url.href = url.href.replace(regex, "")} //remove language code from URL
     copyTextToClipboard(url.href);
 });
 
@@ -75,16 +78,27 @@ function updateContextMenues() {
     });
 }
 
+// Load  Language options from  chrome.storage
+function restoreLangOptions() {
+	// Use default value makeNeutralURL = false.
+	chrome.storage.sync.get({
+			makeNeutralURL: false
+	}, function(items) {
+			makeNeutralURL = items.makeNeutralURL;
+	});
+}
 
 chrome.runtime.onMessage.addListener(function(request) {
     if (request === 'updateDocsLearnContextMenues') {
-        updateContextMenues()
+        updateContextMenues();
+		restoreLangOptions();
     }
 });
 
 
 chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
   if (changeInfo.status == 'complete') {
-    updateContextMenues()
+    updateContextMenues();
+	restoreLangOptions();
   }
 })
