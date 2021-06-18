@@ -1,11 +1,14 @@
 const QUERY_KEY = 'WT.mc_id';
 const regex = /\/en-us/i; //look for URLs that force English language
-var makeNeutralURL = false; // toggle for removal of language code from URLs 
+const regexAll = /(?<=\.com)\/[a-zA-Z]{2}-[a-zA-Z]{2}(?=\/)/i;  //look for URLs that force any language - assumes the format is xxxxxxx.com/xx-yy
+var makeNeutralURL = false; // toggle for removal of language code from English URLs 
+var makeNeutralURLAll = false; // toggle for removal of language code from language specific URLs in any language 
 
 chrome.contextMenus.onClicked.addListener(function (itemData) {
     var url = new URL(itemData.linkUrl);
     url.searchParams.append(QUERY_KEY, itemData.menuItemId);
 	if (makeNeutralURL) {url.href = url.href.replace(regex, "")} //remove language code from URL
+	if (makeNeutralURLAll) {url.href = url.href.replace(regexAll, "")} //remove language code from URL
     copyTextToClipboard(url.href);
 });
 
@@ -82,9 +85,11 @@ function updateContextMenues() {
 function restoreLangOptions() {
 	// Use default value makeNeutralURL = false.
 	chrome.storage.sync.get({
-			makeNeutralURL: false
+			makeNeutralURL: false,
+            makeNeutralURLAll: false
 	}, function(items) {
 			makeNeutralURL = items.makeNeutralURL;
+            makeNeutralURLAll = items.makeNeutralURLAll;
 	});
 }
 
