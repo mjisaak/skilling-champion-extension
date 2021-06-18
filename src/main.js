@@ -1,6 +1,6 @@
 const QUERY_KEY = 'WT.mc_id';
 const regex = /\/en-us/i; //look for URLs that force English language
-const regexAll = /(?<=\.com)\/[a-zA-Z]{2}-[a-zA-Z]{2}(?=\/)/i;  //look for URLs that force any language - assumes the format is xxxxxxx.com/xx-yy
+const regexAll = /(?<=\.com)\/[a-zA-Z]{2}(-[a-zA-Z]{4}){0,1}-[a-zA-Z]{2}/i;  //look for URLs that force any language - assumes the format is xxxxxxx.com/xx-yy or xxxxxxx.com/xx-zzzz-yy
 var makeNeutralURL = false; // toggle for removal of language code from English URLs 
 var makeNeutralURLAll = false; // toggle for removal of language code from language specific URLs in any language 
 
