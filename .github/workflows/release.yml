@@ -15,11 +15,11 @@ jobs:
       - name: Patch manifest (add tag)
         run: |
           $currentTag = (git tag)[-1]
-          $manifest = Get-Content ./src/manifest.json | ConvertFrom-Json
+          $manifest = Get-Content manifest.json | ConvertFrom-Json
           $manifest.version = $currentTag -replace 'v?'
-          $manifest | ConvertTo-Json | Set-Content ./src/manifest.json -Encoding UTF8
+          $manifest | ConvertTo-Json | Set-Content manifest.json -Encoding UTF8
         shell: pwsh
-        working-directory: ./temp
+        working-directory: ./src/
       - name: Build project
         run: |
           zip -r -j src src/*
