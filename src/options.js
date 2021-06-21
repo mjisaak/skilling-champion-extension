@@ -3,6 +3,8 @@ const btnRemove = document.querySelector('#btnRemove');
 const sb = document.querySelector('#list');
 const namefield = document.querySelector('#name');
 const error = document.querySelector('#error');
+const chkLanguageneutral = document.querySelector('#chkLanguageneutral');
+const chkLanguageneutralAll = document.querySelector('#chkLanguageneutralAll');
 
 btnAdd.onclick = (e) => {
     e.preventDefault();
@@ -69,11 +71,54 @@ btnRemove.onclick = (e) => {
     }
 
     saveCreatorIds();
+
 };
+
+chkLanguageneutral.onchange = (e) => {
+    e.preventDefault();
+    saveLangOptions();
+
+};
+
+chkLanguageneutralAll.onchange = (e) => {
+    e.preventDefault();
+    saveLangOptions();
+
+};
+
+// Saves Language options to chrome.storage
+function saveLangOptions() {
+	var makeNeutralURL = document.getElementById('chkLanguageneutral').checked;
+	var makeNeutralURLAll = document.getElementById('chkLanguageneutralAll').checked;
+	chrome.storage.sync.set({
+			makeNeutralURL: makeNeutralURL,
+			makeNeutralURLAll: makeNeutralURLAll
+	}, function() {
+			// Update status to let user know options were saved.
+			var status = document.getElementById('status');
+			status.textContent = 'Options saved.';
+			setTimeout(function() {
+				status.textContent = '';
+			}, 750);
+	});
+}
+
+// Load  Language options from  chrome.storage
+function restoreLangOptions() {
+	// Use default value makeNeutralURL = false to preserve legacy bahavior of the extension
+	chrome.storage.sync.get({
+			makeNeutralURL: false,
+			makeNeutralURLAll: false
+        }, function(items) {
+			document.getElementById('chkLanguageneutral').checked = items.makeNeutralURL;
+			document.getElementById('chkLanguageneutralAll').checked = items.makeNeutralURLAll;
+	});
+}
 
 
 function restoreOptions() {
-    chrome.storage.sync.get({
+    restoreLangOptions();
+	chrome.storage.sync.get({
         list: [],
     }, function (items) {
 

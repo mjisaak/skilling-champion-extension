@@ -5,12 +5,15 @@
 
 This extension adds a ***Copy link address with CreatorID*** item to your Browser on suitable sites.
 It also ensures that the CreatorID is correctly added to the URL, so you don't have to worry about whether the URL already contains a query.
+It provides the option to make English URL "language neutral" by removing "en-us" - this will enable most Microsoft sites to detect the preferred language of the user and serve the content in that language.
 
 ![Image of the context menue](./assets/browser_copy_link_example.png)
 
 
 ## Options
 
-After you have installed the extension, please specify your CreatorIDs within the extension options:
+After you have installed the extension, please specify your CreatorIDs within the extension options. 
+You can also check "Make English URLs language-neutral" or "Make language-specific URLs language-neutral" to make your links more friendly to a global audience. These language-neutral URLs will allow the destination website to match the user's language preference. 
+The first option will only transform English URLs (that contain "en-us") while the second will transforms URLs of any language.   
 
 ![Extension Options](./assets/screenshot_options.png)
