@@ -16,9 +16,10 @@ jobs:
         run: |
           $currentTag = (git tag)[-1]
           $manifest = Get-Content ./src/manifest.json | ConvertFrom-Json
-          $manifest.version = ${GITHUB_REF} -replace 'refs\/tags\/v?'
+          $manifest.version = $currentTag -replace 'v?'
           $manifest | ConvertTo-Json | Set-Content ./src/manifest.json -Encoding UTF8
         shell: pwsh
+        working-directory: ./temp
       - name: Build project
         run: |
           zip -r -j src src/*
