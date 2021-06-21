@@ -13,6 +13,7 @@ It provides the option to make English URL "language neutral" by removing "en-us
 ## Options
 
 After you have installed the extension, please specify your CreatorIDs within the extension options. 
-You can also check "Make English URLs language neutral" to make your links more friendly to a global audience.
+You can also check "Make English URLs language-neutral" or "Make language-specific URLs language-neutral" to make your links more friendly to a global audience. These language-neutral URLs will allow the destination website to match the user's language preference. 
+The first option will only transform English URLs (that contain "en-us") while the second will transforms URLs of any language.   
 
 ![Extension Options](./assets/screenshot_options.png)
