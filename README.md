@@ -1,5 +1,3 @@
-# MVP Docs & Learn Champion extension
-
 Available for Chrome, Edge and Firefox:
 
 <a target="_blank" href="https://chrome.google.com/webstore/detail/mvp-docs-learn-champion-e/eichjbmnicihhbhodbejfkceoknaclfd">
@@ -13,6 +11,8 @@ Available for Chrome, Edge and Firefox:
 <a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mvp-docs-learn-champion">
 <img src="./assets/firefox-badge.png" height="60" title="Click here to install this sample from the Edge Store">
 </a>
+
+# MVP Docs & Learn Champion extension
 
 This extensions allows you to copy a link / page url with your MVP Docs & Learn Champion CreatorID.
 
