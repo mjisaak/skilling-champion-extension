@@ -1,19 +1,72 @@
-<a target="_blank" href="https://chrome.google.com/webstore/detail/mvp-docs-learn-champion-e/eichjbmnicihhbhodbejfkceoknaclfd">![Try it now in CWS](./assets/available_chrome.png "Click here to install this sample from the Chrome Web Store")</a>
-<a target="_blank" href="https://microsoftedge.microsoft.com/addons/detail/mvp-docs-learn-champion/fmbcbeaecledoacfmelbailimfbcjpkb">![Try it now in Edge](./assets/available_edge.png "Click here to install this sample from the Edge Store")</a>
-
 # MVP Docs & Learn Champion extension
 
-This extension adds a ***Copy link address with CreatorID*** item to your Browser on suitable sites.
-It also ensures that the CreatorID is correctly added to the URL, so you don't have to worry about whether the URL already contains a query.
-It provides the option to make English URL "language neutral" by removing "en-us" - this will enable most Microsoft sites to detect the preferred language of the user and serve the content in that language.
+Available for Chrome, Edge and Firefox:
 
-![Image of the context menue](./assets/browser_copy_link_example.png)
+<a target="_blank" href="https://chrome.google.com/webstore/detail/mvp-docs-learn-champion-e/eichjbmnicihhbhodbejfkceoknaclfd">
+<img src="./assets/chrome-badge.png" height="60" title="Click here to install this sample from the Chrome Web Store">
+</a>
+
+<a target="_blank" href="https://microsoftedge.microsoft.com/addons/detail/mvp-docs-learn-champion/fmbcbeaecledoacfmelbailimfbcjpkb">
+<img src="./assets/edge-badge.png" height="60" title="Click here to install this sample from the Edge Store">
+</a>
+
+<a target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/mvp-docs-learn-champion">
+<img src="./assets/firefox-badge.png" height="60" title="Click here to install this sample from the Edge Store">
+</a>
+
+This extensions allows you to copy a link / page url with your MVP Docs & Learn Champion CreatorID.
+
+It ensures that the CreatorID is correctly added to the URL, so you don't have to worry about whether the URL already contains a query. It also provides the option to make English URL "language neutral" by removing "en-us" - this will enable most Microsoft sites to detect the preferred language of the user and serve the content in that language.
 
 
-## Options
 
-After you have installed the extension, please specify your CreatorIDs within the extension options. 
-You can also check "Make English URLs language-neutral" or "Make language-specific URLs language-neutral" to make your links more friendly to a global audience. These language-neutral URLs will allow the destination website to match the user's language preference. 
-The first option will only transform English URLs (that contain "en-us") while the second will transforms URLs of any language.   
+## Usage
+
+### 1. Configure Options
+
+After you have installed the extension, please specify your CreatorIDs within the extension options:
 
 ![Extension Options](./assets/screenshot_options.png)
+
+You can also check "Make English URLs language-neutral" or "Make language-specific URLs language-neutral" to make your links more friendly to a global audience. These language-neutral URLs will allow the destination website to match the user's language preference. 
+The first option will only transform English URLs (that contain "en-us") while the second will transforms URLs of any language.
+
+### 2. Use the extension
+
+After you have specified your CreatorID you will have two options to create a link including your CreatorID
+
+* **Copy a page url** - right click anywhere on a [suiteable page](#suiteable-sites) and select "*Copy page url with CreatorID*"
+
+![copy page url](./assets/copy-page-url.png)
+
+* **Copy a link** - right click on a **link** on a [suiteable page](#suiteable-sites) and select "*Copy link address with CreatorID*"
+
+![copy Link Address](./assets/copy-link-address.png)
+
+**Note:** If you have specified multiple CreatorIDs, the context menues will allow you to choose one of them:
+
+![multiple creator ids](./assets/multiple-creator-ids.png)
+
+<a name="suiteable-sites"></a>
+## Suiteable Sites
+
+Currently, the Docs and Learn Champion program tracks references from the following sites:
+
+* https://social.technet.microsoft.com
+* https://docs.microsoft.com
+* https://azure.microsoft.com
+* https://techcommunity.microsoft.com
+* https://social.msdn.microsoft.com
+* https://devblogs.microsoft.com
+* https://developer.microsoft.com
+* https://channel9.msdn.com
+* https://gallery.technet.microsoft.com
+* https://cloudblogs.microsoft.com
+* https://technet.microsoft.com
+* https://docs.azure.cn
+* https://www.azure.cn
+* https://msdn.microsoft.com
+* https://blogs.msdn.microsoft.com
+* https://blogs.technet.microsoft.com
+* https://microsoft.com/handsonlabs
+* https://csc.docs.microsoft.com
