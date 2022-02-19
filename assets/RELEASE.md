@@ -7,7 +7,7 @@ git push origin --tags
 
 ## Upload description
 
-This extension can be used by Microsoft MVPs for the Microsoft Docs & Learn Champion program. It allows to copy links with an added CreatorId. The context menue is only visible on certain sites:
+This extension can be used by Microsoft MVPs for the Microsoft Skilling Champion program. It allows to copy links with an added CreatorId. The context menue is only visible on certain sites:
 
 "http://social.technet.microsoft.com/*",
 "https://docs.microsoft.com/*",
