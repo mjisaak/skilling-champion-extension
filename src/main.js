@@ -1,5 +1,5 @@
 const QUERY_KEY = "WT.mc_id";
-const extensionPrefix = "-mvpdlc"; // mvpdlc stands for MVP Docs Learn Champion
+const extensionPrefix = "-skch"; // skch stands for skilling champion
 const parentIdPagePostfix = extensionPrefix + "-page";
 const parentIdLinkPostfix = extensionPrefix + "-link";
 const regex = /\/en-us/i; //look for URLs that force English language
@@ -38,7 +38,7 @@ chrome.contextMenus.onClicked.addListener(function (itemData) {
   console.log("linkurl", linkUrl);
   var url = new URL(linkUrl);
 
-  // remove the postfix to get the actual creator Id e. g. AZ-MVP-5003203-mvpdlc-page => AZ-MVP-5003203
+  // remove the postfix to get the actual creator Id e. g. AZ-MVP-5003203-skch-page => AZ-MVP-5003203
   var creatorId = itemData.menuItemId.replace(regexIdPostfix, "");
 
   url.searchParams.append(QUERY_KEY, creatorId);
@@ -140,7 +140,7 @@ function restoreLangOptions() {
 }
 
 chrome.runtime.onMessage.addListener(function (request) {
-  if (request === "updateDocsLearnContextMenues") {
+  if (request === "updateSkillingChampionContextMenues") {
     updateContextMenues();
     restoreLangOptions();
   }

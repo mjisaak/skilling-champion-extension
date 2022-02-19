@@ -12,9 +12,9 @@ Available for Chrome, Edge and Firefox:
 <img src="./assets/firefox-badge.png" height="60" title="Click here to install this sample from the Edge Store">
 </a>
 
-# MVP Docs & Learn Champion extension
+# Skilling Champion extension
 
-This extensions allows you to copy a link / page url with your MVP Docs & Learn Champion CreatorID.
+This extensions allows you to copy a link / page url with your Skilling Champion CreatorID.
 
 It ensures that the CreatorID is correctly added to the URL, so you don't have to worry about whether the URL already contains a query. It also provides the option to make English URL "language neutral" by removing "en-us" - this will enable most Microsoft sites to detect the preferred language of the user and serve the content in that language.
 
@@ -50,7 +50,7 @@ After you have specified your CreatorID you will have two options to create a li
 <a name="suiteable-sites"></a>
 ## Suiteable Sites
 
-Currently, the Docs and Learn Champion program tracks references from the following sites:
+Currently, the Skilling Champion program tracks references from the following sites:
 
 * https://social.technet.microsoft.com
 * https://docs.microsoft.com

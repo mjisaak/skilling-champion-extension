@@ -1,7 +1,7 @@
 ## Contributing
 
-[fork]: https://github.com/mjisaak/mvp-docs-learn-champion-extension/fork
-[pr]: https://github.com/mjisaak/mvp-docs-learn-champion-extension/compare
+[fork]: https://github.com/mjisaak/skilling-champion-extension/fork
+[pr]: https://github.com/mjisaak/skilling-champion-extension/compare
 [code-of-conduct]: CODE_OF_CONDUCT.md
 
 Hi there! I am thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
@@ -10,7 +10,7 @@ Contributions to this project are [released](https://help.github.com/articles/gi
 
 Please note that this project is released with a [Contributor Code of Conduct][code-of-conduct]. By participating in this project you agree to abide by its terms.
 
-## Contributions to the MVP Docs & Learn Champion Chrome extension
+## Contributions to the Skilling Champion Chrome extension
 
 I am gladly accept pull requests to this repository.
 
