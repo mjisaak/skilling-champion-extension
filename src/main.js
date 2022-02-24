@@ -41,13 +41,16 @@ chrome.contextMenus.onClicked.addListener(function (itemData) {
   // remove the postfix to get the actual creator Id e. g. AZ-MVP-5003203-skch-page => AZ-MVP-5003203
   var creatorId = itemData.menuItemId.replace(regexIdPostfix, "");
 
-  url.searchParams.append(QUERY_KEY, creatorId);
-  if (makeNeutralURL) {
-    url.href = url.href.replace(regex, "");
-  } //remove language code from URL
-  if (makeNeutralURLAll) {
-    url.href = url.href.replace(regexAll, "");
-  } //remove language code from URL
+  if (url.searchParams.get(QUERY_KEY) === null) {
+    url.searchParams.append(QUERY_KEY, creatorId);
+    if (makeNeutralURL) {
+      url.href = url.href.replace(regex, "");
+    } //remove language code from URL
+    if (makeNeutralURLAll) {
+      url.href = url.href.replace(regexAll, "");
+    } //remove language code from URL
+  }
+
   copyTextToClipboard(url.href);
 });
 

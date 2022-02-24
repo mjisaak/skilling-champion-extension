@@ -2,7 +2,7 @@
 
 ## Tag the repo to start the release workflow
 
-git tag v1.2.1
+git tag v1.4.4
 git push origin --tags
 
 ## Upload description

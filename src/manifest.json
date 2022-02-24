@@ -1,7 +1,7 @@
 {
   "name": "Skilling Champion extension",
   "description": "Copy link address with CreatorID",
-  "version": "1.4.0",
+  "version": "1.4.4",
   "background": {
     "scripts": ["main.js"],
     "persistent": false
