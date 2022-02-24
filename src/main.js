@@ -41,6 +41,7 @@ chrome.contextMenus.onClicked.addListener(function (itemData) {
   // remove the postfix to get the actual creator Id e. g. AZ-MVP-5003203-skch-page => AZ-MVP-5003203
   var creatorId = itemData.menuItemId.replace(regexIdPostfix, "");
 
+  // Prevent adding multiple creatorIds to the same URL
   if (url.searchParams.get(QUERY_KEY) === null) {
     url.searchParams.append(QUERY_KEY, creatorId);
     if (makeNeutralURL) {
