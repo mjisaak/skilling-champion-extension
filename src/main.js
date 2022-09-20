@@ -10,6 +10,7 @@ const regexIdPostfix = new RegExp(
 const suitableSites = [
   "https://social.technet.microsoft.com/*",
   "https://docs.microsoft.com/*",
+  "https://learn.microsoft.com/*",
   "https://azure.microsoft.com/*",
   "https://techcommunity.microsoft.com/*",
   "https://social.msdn.microsoft.com/*",
