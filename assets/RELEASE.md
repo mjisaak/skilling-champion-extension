@@ -11,6 +11,7 @@ This extension can be used by Microsoft MVPs for the Microsoft Skilling Champion
 
 "http://social.technet.microsoft.com/*",
 "https://docs.microsoft.com/*",
+"https://learn.microsoft.com/*",
 "https://azure.microsoft.com/*",
 "https://techcommunity.microsoft.com/*",
 "https://social.msdn.microsoft.com/*",
