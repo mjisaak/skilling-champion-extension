@@ -35,11 +35,11 @@ The first option will only transform English URLs (that contain "en-us") while t
 
 After you have specified your CreatorID you will have two options to create a link including your CreatorID
 
-* **Copy a page url** - right click anywhere on a [suiteable page](#suiteable-sites) and select "*Copy page url with CreatorID*"
+* **Copy a page url** - right click anywhere on a [suitable page](#suitable-sites) and select "*Copy page url with CreatorID*"
 
 ![copy page url](./assets/copy-page-url.png)
 
-* **Copy a link** - right click on a **link** on a [suiteable page](#suiteable-sites) and select "*Copy link address with CreatorID*"
+* **Copy a link** - right click on a **link** on a [suitable page](#suitable-sites) and select "*Copy link address with CreatorID*"
 
 ![copy Link Address](./assets/copy-link-address.png)
 
@@ -47,8 +47,8 @@ After you have specified your CreatorID you will have two options to create a li
 
 ![multiple creator ids](./assets/multiple-creator-ids.png)
 
-<a name="suiteable-sites"></a>
-## Suiteable Sites
+<a name="suitable-sites"></a>
+## suitable Sites
 
 Currently, the Skilling Champion program tracks references from the following sites:
 
