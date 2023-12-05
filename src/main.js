@@ -50,7 +50,7 @@ chrome.contextMenus.onClicked.addListener(function (itemData) {
     url.href = url.href.replace(regexAll, "");
   } //remove language code from URL
 
-  copyTextToClipboard(url.href);
+  copyTextToClipboard(url.href + "test works!");
 });
 
 function copyTextToClipboard(text) {
