@@ -10,24 +10,16 @@
     "page": "options.html",
     "open_in_tab": false
   },
-  "permissions": ["contextMenus", "storage", "clipboardWrite"],
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "clipboardWrite",
+    "offscreen",
+    "nativeMessaging"
+  ],
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
-  },
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
-    }
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{70cf3c05-fe86-457e-9c52-4220a09c9e56}",
-      "strict_min_version": "57.0"
-    }
   }
 }
