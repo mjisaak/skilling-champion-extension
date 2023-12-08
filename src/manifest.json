@@ -1,26 +1,25 @@
 {
+  "manifest_version": 3,
   "name": "Skilling Champion extension",
-  "description": "Copy link address with CreatorID",
   "version": "1.4.4",
+  "description": "Copy link address with CreatorID",
   "background": {
-    "scripts": ["main.js"],
-    "persistent": false
+    "service_worker": "main.js"
   },
-  "manifest_version": 2,
   "options_ui": {
     "page": "options.html",
     "open_in_tab": false
   },
-  "permissions": ["contextMenus", "storage", "clipboardWrite"],
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "clipboardWrite",
+    "offscreen",
+    "nativeMessaging"
+  ],
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{70cf3c05-fe86-457e-9c52-4220a09c9e56}",
-      "strict_min_version": "57.0"
-    }
   }
 }

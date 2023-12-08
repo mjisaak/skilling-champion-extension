@@ -32,11 +32,9 @@ const regexAll = /(?<=\.com)\/[a-zA-Z]{2}(-[a-zA-Z]{4}){0,1}-[a-zA-Z]{2}/i; //lo
 var makeNeutralURL = false; // toggle for removal of language code from English URLs
 var makeNeutralURLAll = false; // toggle for removal of language code from language specific URLs in any language
 
-chrome.contextMenus.onClicked.addListener(function (itemData) {
-  console.log("itemData", itemData);
+chrome.contextMenus.onClicked.addListener(async function (itemData) {
   var linkUrl =
     itemData.linkUrl !== undefined ? itemData.linkUrl : itemData.pageUrl;
-  console.log("linkurl", linkUrl);
   var url = new URL(linkUrl);
 
   // remove the postfix to get the actual creator Id e. g. AZ-MVP-5003203-skch-page => AZ-MVP-5003203
@@ -50,17 +48,27 @@ chrome.contextMenus.onClicked.addListener(function (itemData) {
     url.href = url.href.replace(regexAll, "");
   } //remove language code from URL
 
-  copyTextToClipboard(url.href);
+  await setClipboardUsingOffscreenDocument(url.href);
 });
 
-function copyTextToClipboard(text) {
-  var copyFrom = document.createElement("textarea");
-  copyFrom.textContent = text;
-  document.body.appendChild(copyFrom);
-  copyFrom.select();
-  document.execCommand("copy");
-  copyFrom.blur();
-  document.body.removeChild(copyFrom);
+async function setClipboardUsingOffscreenDocument(text) {
+  // Create offscreen document if it doesn't exist
+  try {
+    await chrome.offscreen.createDocument({
+      url: "offscreen.html",
+      reasons: [chrome.offscreen.Reason.CLIPBOARD],
+      justification: "Write text to the clipboard.",
+    });
+  } catch (e) {
+    // If the offscreen document already exists, an error will be thrown. This is expected.
+  }
+
+  // Send message to offscreen document
+  chrome.runtime.sendMessage({
+    type: "copy-to-clipboard",
+    target: "offscreen",
+    data: text,
+  });
 }
 
 function createContextMenues(creatorIds) {
