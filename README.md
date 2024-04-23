@@ -71,3 +71,4 @@ Currently, the Skilling Champion program tracks references from the following si
 * https://blogs.technet.microsoft.com
 * https://microsoft.com/handsonlabs
 * https://csc.docs.microsoft.com
+* https://code.visualstudio.com
