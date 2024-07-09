@@ -28,6 +28,9 @@ const suitableSites = [
   "https://microsoft.com/handsonlabs/*",
   "https://csc.docs.microsoft.com/*",
   "https://code.visualstudio.com/*",
+  "https://blog.fabric.microsoft.com/*",
+  "https://powerbi.microsoft.com/*",
+  "https://community.fabric.microsoft.com/*",
 ];
 const regexAll = /(?<=\.com)\/[a-zA-Z]{2}(-[a-zA-Z]{4}){0,1}-[a-zA-Z]{2}/i; //look for URLs that force any language - assumes the format is xxxxxxx.com/xx-yy or xxxxxxx.com/xx-zzzz-yy
 var makeNeutralURL = false; // toggle for removal of language code from English URLs
