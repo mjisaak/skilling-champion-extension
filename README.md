@@ -52,23 +52,26 @@ After you have specified your CreatorID you will have two options to create a li
 
 Currently, the Skilling Champion program tracks references from the following sites:
 
-* https://social.technet.microsoft.com
-* https://docs.microsoft.com
-* https://learn.microsoft.com
 * https://azure.microsoft.com
-* https://techcommunity.microsoft.com
-* https://social.msdn.microsoft.com
-* https://devblogs.microsoft.com
-* https://developer.microsoft.com
-* https://channel9.msdn.com
-* https://gallery.technet.microsoft.com
-* https://cloudblogs.microsoft.com
-* https://technet.microsoft.com
-* https://docs.azure.cn
-* https://www.azure.cn
-* https://msdn.microsoft.com
+* https://blog.fabric.microsoft.com
 * https://blogs.msdn.microsoft.com
 * https://blogs.technet.microsoft.com
-* https://microsoft.com/handsonlabs
-* https://csc.docs.microsoft.com
+* https://channel9.msdn.com
+* https://cloudblogs.microsoft.com
 * https://code.visualstudio.com
+* https://community.fabric.microsoft.com
+* https://csc.docs.microsoft.com
+* https://devblogs.microsoft.com
+* https://developer.microsoft.com
+* https://docs.azure.cn
+* https://docs.microsoft.com
+* https://gallery.technet.microsoft.com
+* https://learn.microsoft.com
+* https://microsoft.com/handsonlabs
+* https://msdn.microsoft.com
+* https://powerbi.microsoft.com
+* https://social.msdn.microsoft.com
+* https://social.technet.microsoft.com
+* https://techcommunity.microsoft.com
+* https://technet.microsoft.com
+* https://www.azure.cn
