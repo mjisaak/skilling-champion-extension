@@ -2,8 +2,10 @@
 
 ## Tag the repo to start the release workflow
 
+```bash
 git tag v1.4.4
 git push origin --tags
+```
 
 ## Upload description
 
