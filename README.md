@@ -24,7 +24,7 @@ It ensures that the CreatorID is correctly added to the URL, so you don't have t
 
 ### 1. Configure Options
 
-After you have installed the extension, please specify your CreatorIDs within the extension options:
+After you have installed the extension, please specify your CreatorIDs within the extension options. You can find your MVP contributor id in your profile under "Program Information". Use only the part after "=" of your id. 
 
 ![Extension Options](./assets/screenshot_options.png)
 
